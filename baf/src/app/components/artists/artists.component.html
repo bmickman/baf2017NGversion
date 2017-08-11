@@ -1,0 +1,17 @@
+<div class="container" style="padding-bottom:250px;">
+<form id="filter" style="padding-bottom:40px;">
+  <input class="form-control" type="text" name="artists"
+  placeholder="Search by address!"
+  [(ngModel)]="term">
+</form>
+<div  class="row wow pulse" >
+
+  <div class="col-lg-4 col-md-4 col-sm-6 card wow bounceInUp" *ngFor="let artist of artists | filter:term"  style="padding-bottom:25px; background-color:transparent;">
+    <div class="mycard wow fadeIn">
+    <p>{{artist.name}} </p>
+    <p class="address">{{artist.address}}</p>
+    <img src="{{artist.pic}}" class="small wow" alt="">
+  </div>
+  </div>
+</div>
+</div>
